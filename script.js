@@ -3,7 +3,7 @@ let input = document.getElementById("ipt_newTask");
 
 function validateIfExistsNewTask() {
   let values = JSON.parse(localStorage.getItem(localStoragekey) || "[]");
-  let inputValue = document.getElementById("ipt_newTask").value;
+  let inputValue = document.getElementById("ipt_newTask").value.trim();
   let exists = values.find((x) => x.name == inputValue);
 
   return !exists ? false : true; // if else compactado (? -> "Então..."/ : -> "Senão...")
@@ -21,7 +21,7 @@ function newTask() {
     // depois guarda tudo isso dentro da variável (values)
 
     values.push({
-      name: input.value,
+      name: input.value.trim(),
     });
 
     localStorage.setItem(localStoragekey, JSON.stringify(values)); // guarda as infos na caixinha que criamos o nome la encima  ('to-do-list-pv')
