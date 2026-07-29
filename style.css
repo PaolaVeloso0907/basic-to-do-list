@@ -5,54 +5,47 @@
 
 :root {
   --cor-preto: #000;
-  --cor-escuro: #3d211a;
-  --cor-medio: #6f4d38;
-  --cor-bege: #cbb799;
-  --cor-vanilla: #fceccf;
-  --cor-claro: #f5f5dc;
-  --cor-branco: #fff;
+  --cor-texto: #9c967c;
+  --cor-texto-escuro: #5c5744;
+  --cor-fundo: #dfd7d7;
+  --cor-fundo-card: #ece5e5;
 }
 
 body {
-  background-image: url(./Assets/Images/bg.png);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-  margin-top: 3.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--cor-fundo);
 }
 
 h1 {
   font-weight: 400;
-  font-size: 2.5rem;
-  font-style: italic;
-  color: var(--cor-escuro);
+  font-size: 2rem;
+  color: var(--cor-texto-escuro);
+  text-align: start;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+  width: 100%;
 }
 
 .content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
-  width: 640px;
-  height: 839px;
+  width: 60%;
+  background-color: var(--cor-fundo-card);
+  gap: 2rem;
+  padding: 3rem;
   border-radius: 30px;
-  box-shadow: 0 4px 30px 0 rgba(0, 0, 0, 0.5);
-  background-color: var(--cor-vanilla);
+  box-shadow: 10px 10px 30px rgb(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
 
-.content-border {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4rem;
-  width: 604px;
-  height: 801px;
-  border-radius: 30px;
-  border: 2px solid #3d211a;
+.content:hover {
+  transform: scale(1.05);
 }
 
 .content-add-item {
@@ -76,8 +69,8 @@ h1 {
 }
 
 #btn--newTask {
-  background-color: var(--cor-escuro);
-  color: var(--cor-branco);
+  background-color: var(--cor-texto-escuro);
+  color: var(--cor-fundo);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -86,7 +79,12 @@ h1 {
 }
 
 #btn--newTask:hover {
-  background-color: var(--cor-medio);
+  background-color: var(--cor-texto);
+}
+
+.content-body {
+  width: 100%;
+  max-width: 386px;
 }
 
 #to--do--list {
@@ -94,7 +92,6 @@ h1 {
   flex-direction: column;
   padding: 0;
   gap: 1rem;
-  width: 100%;
 }
 
 #to--do--list li {
@@ -103,5 +100,4 @@ h1 {
   text-transform: capitalize;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
